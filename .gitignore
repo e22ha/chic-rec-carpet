@@ -125,3 +125,8 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+.DS_Store
+.idea/chic.iml
+.idea/jsLibraryMappings.xml
+.idea/misc.xml
+.idea/modules.xml
