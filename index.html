@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+    <head>
+        <meta charset="utf-8" />
+        <title>My Landing Page</title>
+        <script src="https://unpkg.com/htmx.org@1.9.5"></script>
+        <script src="https://unpkg.com/hyperscript.org@0.9.11"></script>
+        <script src="https://unpkg.com/htmx.org/dist/ext/json-enc.js"></script>
+        <script type="module" src="/three.module.min.js"></script>
+        <script type="module" src="/tween.esm.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+        />
+
+        <style>
+            #threejs-container {
+                min-width: 100%;
+                height: 100vh;
+            }
+
+            #time-display {
+                position: fixed;
+                bottom: 10px;
+                left: 10px;
+                font-size: 18px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header class="container-fluid" style="width: 1000px">
+            <div class="row">
+                <div class="col-6 d-flex justify-content-between">
+                    <div>
+                        <p><strong>П К М</strong></p>
+                    </div>
+                    <div>
+                        <p>Генератор</p>
+                    </div>
+                </div>
+                <div class="col-6 d-flex justify-content-between">
+                    <div>
+                        <p>Купить готовый</p>
+                    </div>
+                    <div>
+                        <p>
+                            <button class="secondary" onclick="switchTheme()">
+                                Вход
+                            </button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="container">
+            <section>
+                <p>1 block</p>
+            </section>
+            <!-- Loading -->
+            <section id="loading">
+                <script aria-busy="true" type="module" src="/main.js"></script>
+            </section>
+            <div id="threejs-container"></div>
+            <div id="time-display"></div>
+
+            <script type="module" src="/time.js"></script>
+            <script>
+                function switchTheme() {
+                    const htmlElement = document.documentElement;
+                    if (htmlElement.getAttribute("data-theme") === "dark") {
+                        htmlElement.setAttribute("data-theme", "light");
+                    } else {
+                        htmlElement.setAttribute("data-theme", "dark");
+                    }
+                }
+            </script>
+        </main>
+    </body>
+</html>
