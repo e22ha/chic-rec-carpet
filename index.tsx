@@ -1,6 +1,11 @@
 const server = Bun.serve({
+<<<<<<< HEAD
   hostname: "localhost",
   port: 3333,
+=======
+  hostname: "192.168.0.181",
+  port: 8080,
+>>>>>>> 18d334e08726ac6b7a27f5599ae13a566df005ea
   fetch: Handler,
 });
 
@@ -15,6 +20,7 @@ async function Handler(request: Request): Promise<Response> {
   else if (url.pathname == "/three.module.min.js")
     return new Response(
       Bun.file("node_modules/three/build/three.module.min.js"),
+<<<<<<< HEAD
       );
   else if (url.pathname == "/tween.esm.js")
     return new Response(
@@ -31,6 +37,13 @@ async function Handler(request: Request): Promise<Response> {
     const responseMessage = `<p>You entered: <strong>${userInput}</strong></p>`;
     return new Response(responseMessage, { status: 200, headers: { 'Content-Type': 'text/html' } });
   }
+=======
+    );
+  else if (url.pathname == "/tween.esm.js")
+    return new Response(
+      Bun.file("node_modules/@tweenjs/tween.js/dist/tween.esm.js"),
+    );
+>>>>>>> 18d334e08726ac6b7a27f5599ae13a566df005ea
   else console.log(url.pathname);
   return new Response("Not found", { status: 404 });
 }
