@@ -3,7 +3,7 @@
   "module": "index.ts",
   "type": "module",
   "scripts": {
-    "dev": "bun --hot run index.tsx"
+    "dev": "bun --hot run index.ts"
   },
   "devDependencies": {
     "@types/bun": "^1.0.8"
@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@tweenjs/tween.js": "^23.1.1",
-    "gasp": "^0.0.2",
+    "gsap": "^3.12.5",
     "htmx.org": "^1.9.10",
     "three": "^0.162.0"
   }

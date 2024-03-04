@@ -1,110 +1,87 @@
 <!doctype html>
 <html lang="en" data-theme="light">
-    <head>
-        <meta charset="utf-8" />
-        <title>My Landing Page</title>
-        <script src="https://unpkg.com/htmx.org@1.9.5"></script>
-        <script src="https://unpkg.com/hyperscript.org@0.9.11"></script>
-        <script src="https://unpkg.com/htmx.org/dist/ext/json-enc.js"></script>
-        <script type="module" src="/three.module.min.js"></script>
-        <script type="module" src="/tween.esm.js"></script>
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
-        />
 
-        <style>
-            #threejs-container {
-                min-width: 100%;
-                height: 100vh;
-            }
+<head>
+    <meta charset="utf-8" />
+    <title>My Landing Page</title>
+    <script src="https://unpkg.com/htmx.org@1.9.5"></script>
+    <script src="https://unpkg.com/hyperscript.org@0.9.11"></script>
+    <script src="https://unpkg.com/htmx.org/dist/ext/json-enc.js"></script>
+    <script type="module" src="/three.module.min.js"></script>
+    <script type="module" src="/tween.esm.js"></script>
+    <link rel="stylesheet" href="index.css" />
+    <link rel=" stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+</head>
 
-            #time-display {
-                position: fixed;
-                bottom: 10px;
-                left: 10px;
-                font-size: 18px;
-            }
-            #userInput{ z-index:1000; };
-
-                    /* Add custom CSS rules here */
-        input[type="text"] {
-            /* Set any styles you need for the input field */
-            pointer-events: auto;
-            opacity: 1;
-            display: inline-block;
-            visibility: visible;
-        }
-        </style>
-    </head>
-
-    <body>
-        <header class="container">
-            <nav >
-                <ul >
-                    <il>
-                        <p><strong>П К М</strong></p>
-                    </il>
-                    <il>
-                        <p>Генератор</p>
-                    </il>
-                </ul>
-                <ul>
-                    <il>
-                        <p>Купить готовый</p>
-                    </il>
-                    <il>
-                        <p>
-                            <button class="secondary" onclick="switchTheme()">
-                                Вход
-                            </button>
-                        </p>
-                    </il>
-                </ul>
-            </nav>
-        </header>
-        <main class="container">
-            <section>
-                <h1><strong>first block</strong></h1>
-                <img src="img/img1.jpg">
-            </section>
-            <section>
-                <h3>Мы сделаем ковёр точно такой же, как вы сгенерировали на сайте</h3>
-                <img class="container" src="img/img1.jpg">
-                <h3>И доставим к вам домой или в пункт выдачи через 14 дней</h3>
-            </section>
-            <section>
-                <hgroup>
-                    <h2>Вы можете сделать именно тот ковёр, о котором </h2>
-                    <h4>За нами только размер 300 x 160 см и самые </h4>
-                </hgroup>
-                <img class="container" src="img/img1.jpg">
-                <form hx-post="/submit-url" hx-target="#response" hx-swap="beforeswap outerHTML">
-                    <input type="text" id="userInput" name="userInput" placeholder="Enter your text here"><br>
-                    <button type="submit">Submit</button>
-                </form>
-                <div id="response">
-        <!-- The response from the server will be swapped into this div -->
+<body>
+    <div class="head-container">
+        <div class="box">
+            <p><strong>П К М</strong></p>
+        </div>
+        <div class="box">
+            <p>О сервисе</p>
+        </div>
+        <div class="box">
+            <p>Купить готовый</p>
+        </div>
+        <div class="box">
+            <a href="#generator" class="btn">
+                <p>Генератор</p>
+            </a>
+        </div>
+    </div>
+    <main class="container">
+        <div style="
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center; /* Add this line to center horizontally */
+                    height: 90vh; /* Add this line to center vertically */
+                ">
+            <div style="margin-right: -100px; padding: 20px">
+                <h1 style="font-size: 4em">
+                    <strong>Ваш новый <br />
+                        прямоугольный<br />
+                        модный ковёр
+                    </strong>
+                </h1>
+            </div>
+            <div style="margin-left: -100px; padding: 20px">
+                <img src="img/1section_img.png" />
+            </div>
+        </div>
+        <section>
+            <h3>
+                Мы сделаем ковёр точно такой же, как вы сгенерировали на
+                сайте
+            </h3>
+            <img class="container" src="img/placeholder_1.png" />
+            <h3>И доставим к вам домой или в пункт выдачи через 14 дней</h3>
+        </section>
+        <section id="generator">
+            <div>
+                <div class="row">
+                    <h2>Title</h2>
+                    <h4>Subtitle</h4>
                 </div>
-            </section>
-            <!-- Loading -->
-            <section id="loading">
-                <!--<script aria-busy="true" type="module" src="/main.js"></script>-->
-            </section>
-            <div id="threejs-container"></div>
-            <div id="time-display"></div>
+                <img src="/path/to/image" alt="Image" hx-get="/path/to/endpoint" hx-trigger="load">
+                <div class="row">
+                    <input type="text" placeholder="Введите любое слово" id="userInput">
+                    <p id="response"></p>
+                    <button hx-post="/path/to/endpoint" hx-target="#response" hx-swap="outerHTML">
+                        <img src="/path/to/button-image" alt="Button">
+                    </button>
+                </div>
+        </section>
 
-            <script type="module" src="/time.js"></script>
-            <script>
-                function switchTheme() {
-                    const htmlElement = document.documentElement;
-                    if (htmlElement.getAttribute("data-theme") === "dark") {
-                        htmlElement.setAttribute("data-theme", "light");
-                    } else {
-                        htmlElement.setAttribute("data-theme", "dark");
-                    }
-                }
-            </script>
-        </main>
-    </body>
+        <div id="threejs-container"></div>
+        <div id="time-display"></div>
+
+        <script type="module" src="/time.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollToPlugin.min.js"></script>
+        <script type="module" src="/animation.js"></script>
+    </main>
+</body>
+
 </html>
