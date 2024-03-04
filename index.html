@@ -25,41 +25,71 @@
                 left: 10px;
                 font-size: 18px;
             }
+            #userInput{ z-index:1000; }
+
+                    /* Add custom CSS rules here */
+        input[type="text"] {
+            /* Set any styles you need for the input field */
+            pointer-events: auto;
+            opacity: 1;
+            display: inline-block;
+            visibility: visible;
+        }
         </style>
     </head>
 
     <body>
-        <header class="container-fluid" style="width: 1000px">
-            <div class="row">
-                <div class="col-6 d-flex justify-content-between">
-                    <div>
+        <header class="container">
+            <nav >
+                <ul >
+                    <il>
                         <p><strong>П К М</strong></p>
-                    </div>
-                    <div>
+                    </il>
+                    <il>
                         <p>Генератор</p>
-                    </div>
-                </div>
-                <div class="col-6 d-flex justify-content-between">
-                    <div>
+                    </il>
+                </ul>
+                <ul>
+                    <il>
                         <p>Купить готовый</p>
-                    </div>
-                    <div>
+                    </il>
+                    <il>
                         <p>
                             <button class="secondary" onclick="switchTheme()">
                                 Вход
                             </button>
                         </p>
-                    </div>
-                </div>
-            </div>
+                    </il>
+                </ul>
+            </nav>
         </header>
         <main class="container">
             <section>
-                <p>1 block</p>
+                <h1><strong>first block</strong></h1>
+                <img src="img/img1.jpg">
+            </section>
+            <section>
+                <h3>Мы сделаем ковёр точно такой же, как вы сгенерировали на сайте</h3>
+                <img class="container" src="img/img1.jpg">
+                <h3>И доставим к вам домой или в пункт выдачи через 14 дней</h3>
+            </section>
+            <section>
+                <hgroup>
+                    <h2>Вы можете сделать именно тот ковёр, о котором </h2>
+                    <h4>За нами только размер 300 x 160 см и самые </h4>
+                </hgroup>
+                <img class="container" src="img/img1.jpg">
+                <form hx-post="/submit-url" hx-target="#response" hx-swap="beforeswap outerHTML">
+                    <input type="text" id="userInput" name="userInput" placeholder="Enter your text here"><br>
+                    <button type="submit">Submit</button>
+                </form>
+                <div id="response">
+        <!-- The response from the server will be swapped into this div -->
+                </div>
             </section>
             <!-- Loading -->
             <section id="loading">
-                <script aria-busy="true" type="module" src="/main.js"></script>
+                <!--<script aria-busy="true" type="module" src="/main.js"></script>-->
             </section>
             <div id="threejs-container"></div>
             <div id="time-display"></div>
