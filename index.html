@@ -1,87 +1,816 @@
-<!doctype html>
-<html lang="en" data-theme="light">
-
-<head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
     <meta charset="utf-8" />
-    <title>My Landing Page</title>
+    <title>ПМК</title>
     <script src="https://unpkg.com/htmx.org@1.9.5"></script>
     <script src="https://unpkg.com/hyperscript.org@0.9.11"></script>
     <script src="https://unpkg.com/htmx.org/dist/ext/json-enc.js"></script>
-    <script type="module" src="/three.module.min.js"></script>
-    <script type="module" src="/tween.esm.js"></script>
-    <link rel="stylesheet" href="index.css" />
-    <link rel=" stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
-</head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
 
-<body>
-    <div class="head-container">
-        <div class="box">
-            <p><strong>П К М</strong></p>
+  <body>
+    <div
+      class="Frame43 w-auto h-[5456px] p-2 bg-gray-200 flex-col justify-start items-start gap-2 inline-flex"
+    >
+      <div
+        class="Frame47 self-stretch h-auto flex-col justify-start items-start gap-2 flex"
+      >
+        <div
+          class="Frame31 self-stretch h-[712px] rounded-[32px] justify-start items-start gap-2 inline-flex"
+        >
+          <div
+            class="Frame28 grow shrink basis-0 h-[712px] p-9 bg-blue-950 rounded-[32px] flex-col justify-between items-start inline-flex"
+          >
+            <div
+              class="self-stretch text-white text-7xl font-normal font-['Open Sans Hebrew'] uppercase leading-[72px]"
+            >
+              Прямоугольный<br />модный ковёр
+            </div>
+            <div
+              class="self-stretch text-white text-[28px] font-normal font-['Open Sans Hebrew'] leading-loose"
+            >
+              Мы магазин-генератор классных ковров из шерсти со уникальным
+              рисунком и случайной палитрой
+            </div>
+          </div>
+          <div
+            class="Frame29 grow shrink basis-0 h-[712px] p-8 bg-cyan-600 rounded-[32px] justify-center items-center gap-2.5 flex"
+          >
+            <img
+              class="DefaultRectangularPinkStripedRugOnABlueBackground01 w-[438.18px] h-[516.46px] origin-top-center rotate-[6.67deg]"
+              src="https://via.placeholder.com/438x516"
+            />
+          </div>
         </div>
-        <div class="box">
-            <p>О сервисе</p>
-        </div>
-        <div class="box">
-            <p>Купить готовый</p>
-        </div>
-        <div class="box">
-            <a href="#generator" class="btn">
-                <p>Генератор</p>
+        <div
+          class="Frame32 self-stretch h-auto rounded-[32px] justify-start items-start gap-2 inline-flex"
+        >
+          <div
+            class="Frame28 grow shrink basis-0 h-auto p-9 bg-lime-300 rounded-[64px] flex-col justify-start items-center gap-2.5 flex"
+          >
+            <a
+              href="#generator"
+              class="no-underline text-blue-950 text-[28px] font-normal font-['Open Sans Hebrew'] leading-loose"
+            >
+              Сгенерировать новый
             </a>
+          </div>
+          <button
+            class="Frame29 grow shrink basis-0 h-auto p-9 bg-blue-950 rounded-[64px] justify-center items-center gap-2.5 flex"
+          >
+            <a
+              href="#shop"
+              class="no-underline text-white text-[28px] font-normal font-['Open Sans Hebrew'] leading-loose"
+            >
+              Купить готовый
+            </a>
+          </button>
         </div>
+      </div>
+      <div
+        id="block"
+        class="Frame48 self-stretch h-[1254px] flex-col justify-start items-start gap-2 flex"
+      >
+        <div
+          class="Frame36 self-stretch h-[712px] bg-white rounded-[32px] justify-start items-start inline-flex"
+        >
+          <div
+            class="Frame29 grow shrink basis-0 h-[712px] p-8 bg-white rounded-[32px] justify-center items-center gap-2.5 flex"
+          >
+            <img
+              class="DefaultRectangularGreenStripedRugOnAWhiteBackground01 w-[593.94px] h-[459.38px] origin-top-left rotate-[-8.89deg]"
+              src="https://via.placeholder.com/594x459"
+            />
+          </div>
+          <div
+            class="Frame28 grow shrink basis-0 h-[712px] px-9 py-[52px] bg-white rounded-[32px] flex-col justify-end items-start gap-6 inline-flex"
+          >
+            <div
+              class="self-stretch text-blue-950 text-7xl font-normal font-['Open Sans Hebrew'] uppercase leading-[72px]"
+            >
+              Бесконечная генерация
+            </div>
+            <div
+              class="self-stretch text-blue-950 text-[28px] font-normal font-['Open Sans Hebrew'] leading-loose"
+            >
+              Правда, делайте и сохраняйте столько ковров, сколько захотите,
+              пока не найдёте ковёр вашей мечты.
+            </div>
+            <div
+              class="self-stretch text-blue-950 text-xl font-normal font-['Open Sans Hebrew'] leading-normal"
+            >
+              И мы вам в этом ещё и поможем.
+            </div>
+          </div>
+        </div>
+        <div
+          id="block2"
+          class="Frame33 self-stretch h-[534px] rounded-[32px] justify-start items-start gap-2 inline-flex"
+        >
+          <div
+            class="Frame28 grow shrink basis-0 self-stretch p-9 bg-pink-700 rounded-[32px] flex-col justify-start items-start gap-6 inline-flex"
+          >
+            <div
+              class="self-stretch text-white text-[34px] font-normal font-['Open Sans Hebrew'] uppercase leading-[38px]"
+            >
+              Как это вообще всё работает?
+            </div>
+          </div>
+          <div
+            class="Frame29 grow shrink basis-0 self-stretch p-9 bg-white rounded-[32px] flex-col justify-end items-start gap-6 inline-flex"
+          >
+            <div
+              class="self-stretch text-blue-950 text-[28px] font-normal font-['Open Sans Hebrew'] leading-loose"
+            >
+              Вы жмёте кнопку сгенерировать,
+            </div>
+            <div
+              class="self-stretch text-blue-950 text-xl font-normal font-['Open Sans Hebrew'] leading-normal"
+            >
+              пока не получите самый красивый рисунок, который вам понравится, и
+              оформляете заказ
+            </div>
+          </div>
+          <div
+            class="Frame30 grow shrink basis-0 self-stretch p-9 bg-white rounded-[32px] flex-col justify-end items-start gap-6 inline-flex"
+          >
+            <div
+              class="self-stretch text-blue-950 text-[28px] font-normal font-['Open Sans Hebrew'] leading-loose"
+            >
+              Мы очень аккуратно вяжем ковёр,
+            </div>
+            <div
+              class="self-stretch text-blue-950 text-xl font-normal font-['Open Sans Hebrew'] leading-normal"
+            >
+              чтобы она максимально соответствовал тому, что вы сгенерировали на
+              сайте
+            </div>
+          </div>
+          <div
+            class="Frame31 grow shrink basis-0 self-stretch p-9 bg-white rounded-[32px] flex-col justify-end items-start gap-6 inline-flex"
+          >
+            <div
+              class="self-stretch text-blue-950 text-[28px] font-normal font-['Open Sans Hebrew'] leading-loose"
+            >
+              Отправляем ваш ковёр в любую точку мира,
+            </div>
+            <div
+              class="self-stretch text-blue-950 text-xl font-normal font-['Open Sans Hebrew'] leading-normal"
+            >
+              тщательно упаковав, чтобы с ним точно ничего не случилось
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="Frame49 self-stretch h-auto flex-col justify-start items-start gap-2 flex"
+      >
+        <div
+          id="generator"
+          class="Generator self-stretch rounded-[32px] justify-start items-start gap-2 inline-flex"
+        >
+          <div
+            class="Frame28 grow shrink basis-0 self-stretch p-8 bg-white rounded-[32px] flex-col justify-center items-center gap-6 inline-flex"
+          ></div>
+          <div
+            class="Frame36 w-[462px] h-auto flex-col justify-start items-start gap-2 inline-flex"
+          >
+            <div
+              class="Frame31 self-stretch bg-cyan-600 rounded-[32px] flex-col justify-start items-start gap-8 flex"
+            >
+              <div
+                class="Frame38 self-stretch px-8 pt-8 justify-start items-start gap-2.5 inline-flex"
+              >
+                <div
+                  class="grow shrink basis-0 text-white text-[28px] font-normal font-['Open Sans Hebrew'] leading-loose"
+                >
+                  Форма
+                </div>
+              </div>
+              <div
+                class="Frame37 self-stretch bg-blue-950 rounded-[64px] justify-start items-start inline-flex"
+              >
+                <button
+                  class="Frame29 grow shrink basis-0 h-auto p-6 bg-teal-950 rounded-[64px] justify-center items-center gap-2.5 flex"
+                >
+                  <div
+                    class="text-white text-xl font-normal font-['Open Sans Hebrew'] leading-normal"
+                  >
+                    Прямоугольный
+                  </div>
+                </button>
+                <button
+                  class="Frame31 grow shrink basis-0 h-auto p-6 bg-slate-700 rounded-[64px] justify-center items-center gap-2.5 flex"
+                >
+                  <div
+                    class="text-white text-xl font-normal font-['Open Sans Hebrew'] leading-normal"
+                  >
+                    Квадратный
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="Frame32 self-stretch bg-cyan-600 rounded-[32px] flex-col justify-start items-start gap-8 flex"
+            >
+              <div
+                class="Frame38 self-stretch px-8 pt-8 justify-start items-start gap-2.5 inline-flex"
+              >
+                <div
+                  class="grow shrink basis-0 text-white text-[28px] font-normal font-['Open Sans Hebrew'] leading-loose"
+                >
+                  Цвет
+                </div>
+              </div>
+              <div
+                class="Frame37 self-stretch bg-blue-950 rounded-[64px] justify-start items-start inline-flex"
+              >
+                <button
+                  class="Frame31 grow shrink basis-0 h-auto p-6 bg-slate-700 rounded-[64px] justify-center items-center gap-2.5 flex"
+                >
+                  <div
+                    class="text-white text-xl font-normal font-['Open Sans Hebrew'] leading-normal"
+                  >
+                    Цветной
+                  </div>
+                </button>
+                <button
+                  class="Frame29 grow shrink basis-0 h-auto p-6 bg-teal-950 rounded-[64px] justify-center items-center gap-2.5 flex"
+                >
+                  <div
+                    class="text-white text-xl font-normal font-['Open Sans Hebrew'] leading-normal"
+                  >
+                    Монохром
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="Frame33 self-stretch bg-cyan-600 rounded-[32px] flex-col justify-start items-start gap-8 flex"
+            >
+              <div
+                class="Frame38 self-stretch px-8 pt-8 justify-start items-start gap-2.5 inline-flex"
+              >
+                <div
+                  class="grow shrink basis-0 text-white text-[28px] font-normal font-['Open Sans'] leading-loose"
+                >
+                  Рисунок
+                </div>
+              </div>
+              <div
+                class="Frame37 self-stretch bg-blue-950 rounded-[64px] justify-start items-start inline-flex"
+              >
+                <button
+                  class="Frame31 grow shrink basis-0 h-[72px] p-6 bg-slate-700 rounded-[64px] justify-center items-center gap-2.5 flex"
+                >
+                  <div
+                    class="text-white text-xl font-normal font-['Open Sans Hebrew'] leading-normal"
+                  >
+                    Линии
+                  </div>
+                </button>
+                <button
+                  class="Frame29 grow shrink basis-0 h-[72px] p-6 bg-teal-950 rounded-[64px] justify-center items-center gap-2.5 flex"
+                >
+                  <div
+                    class="text-white text-xl font-normal font-['Open Sans Hebrew'] leading-normal"
+                  >
+                    Хаос
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="Frame35 h-auto self-stretch rounded-[32px] justify-start items-start gap-2 inline-flex"
+        >
+          <button
+            class="Frame28 w-auto h-auto grow shrink basis-0 p-9 bg-lime-300 rounded-[64px] flex-col justify-start items-center gap-2.5 inline-flex"
+          >
+            <div
+              class="text-blue-950 text-[28px] font-normal font-['Open Sans Hebrew'] leading-loose"
+            >
+              Сгенерировать
+            </div>
+          </button>
+          <button
+            class="Frame29 w-[462px] h-auto p-9 bg-pink-700 rounded-[64px] justify-center items-center gap-2.5 flex"
+          >
+            <div
+              class="text-white text-[28px] font-normal font-['Open Sans Hebrew'] leading-loose"
+            >
+              Сохранить
+            </div>
+          </button>
+        </div>
+      </div>
+      <div
+        id="shop"
+        class="self-stretch h-[712px] bg-cyan-600 rounded-[32px] justify-start items-start gap-2 inline-flex"
+      >
+        <div
+          class="grow shrink basis-0 self-stretch px-9 py-[52px] bg-cyan-600 rounded-[32px] flex-col justify-end items-start gap-6 inline-flex"
+        >
+          <div
+            class="self-stretch text-white text-[28px] font-normal font-['Open Sans Hebrew'] leading-loose"
+          >
+            Если не получилось сделать нужный ковёр в генераторе, у нас есть
+          </div>
+          <div
+            class="self-stretch text-white text-7xl font-normal font-['Open Sans Hebrew'] uppercase leading-[72px]"
+          >
+            готовые ковры
+          </div>
+        </div>
+        <div
+          class="Frame29 grow shrink basis-0 self-stretch p-8 bg-cyan-600 rounded-[32px] justify-end items-end gap-3 flex"
+        >
+          <button class="Group2 w-14 h-14 relative">
+            <div
+              class="Rectangle20 w-14 h-14 left-0 top-0 absolute bg-blue-950 rounded-[72px]"
+            ></div>
+          </button>
+          <button class="Group3 w-14 h-14 relative">
+            <div
+              class="Rectangle20 w-14 h-14 left-0 top-0 absolute bg-blue-950 rounded-[72px]"
+            ></div>
+          </button>
+        </div>
+      </div>
+      <div
+        class="All self-stretch h-auto rounded-[32px] justify-start items-start gap-2 inline-flex"
+      >
+        <div
+          class="B1 grow shrink basis-0 h-[534px] py-3 bg-white rounded-[32px] flex-col justify-start items-start gap-6 inline-flex"
+        >
+          <div
+            class="Frame38 self-stretch grow shrink basis-0 px-8 justify-center items-center gap-2.5 inline-flex"
+          >
+            <img
+              class="DefaultRectangularBlueStripedRugOnAWhiteBackground31 w-[257px] h-[374.06px]"
+              src="https://via.placeholder.com/257x374"
+            />
+          </div>
+          <div
+            class="Frame46 self-stretch h-[72px] px-3 flex-col justify-start items-center flex"
+          >
+            <button
+              class="Frame37 self-stretch p-6 bg-blue-950 rounded-[64px] justify-center items-center inline-flex"
+            >
+              <div
+                class="text-white text-xl font-normal font-['Open Sans Hebrew'] leading-normal"
+              >
+                В корзину
+              </div>
+            </button>
+          </div>
+        </div>
+        <div
+          class="B1 grow shrink basis-0 h-[534px] py-3 bg-white rounded-[32px] flex-col justify-start items-start gap-6 inline-flex"
+        >
+          <div
+            class="Frame38 self-stretch grow shrink basis-0 px-8 justify-center items-center gap-2.5 inline-flex"
+          >
+            <img
+              class="DefaultRectangularBlueStripedRugOnAWhiteBackground31 w-[257px] h-[374.06px]"
+              src="https://via.placeholder.com/257x374"
+            />
+          </div>
+          <div
+            class="Frame46 self-stretch h-[72px] px-3 flex-col justify-start items-center flex"
+          >
+            <button
+              class="Frame37 self-stretch p-6 bg-blue-950 rounded-[64px] justify-center items-center inline-flex"
+            >
+              <div
+                class="text-white text-xl font-normal font-['Open Sans Hebrew'] leading-normal"
+              >
+                В корзину
+              </div>
+            </button>
+          </div>
+        </div>
+        <div
+          class="B1 grow shrink basis-0 h-[534px] py-3 bg-white rounded-[32px] flex-col justify-start items-start gap-6 inline-flex"
+        >
+          <div
+            class="Frame38 self-stretch grow shrink basis-0 px-8 justify-center items-center gap-2.5 inline-flex"
+          >
+            <img
+              class="DefaultRectangularBlueStripedRugOnAWhiteBackground31 w-[257px] h-[374px]"
+              src="https://via.placeholder.com/257x374"
+            />
+          </div>
+          <div
+            class="Frame46 self-stretch w-auto h-[72px] px-3 flex-col justify-start items-center flex"
+          >
+            <button
+              class="Frame37 self-stretch p-6 bg-blue-950 h-auto rounded-[64px] justify-center items-center inline-flex"
+            >
+              <div
+                class="text-white text-xl font-normal font-['Open Sans Hebrew'] leading-normal"
+              >
+                В корзину
+              </div>
+            </button>
+          </div>
+        </div>
+        <div
+          class="B1 grow shrink basis-0 h-[534px] py-3 bg-white rounded-[32px] flex-col justify-start items-start gap-6 inline-flex"
+        >
+          <div
+            class="Frame38 self-stretch grow shrink basis-0 px-8 justify-center items-center gap-2.5 inline-flex"
+          >
+            <img
+              class="DefaultRectangularBlueStripedRugOnAWhiteBackground31 w-[257px] h-[374.06px]"
+              src="https://via.placeholder.com/257x374"
+            />
+          </div>
+          <div
+            class="Frame46 self-stretch h-[72px] px-3 flex-col justify-start items-center flex"
+          >
+            <button
+              class="Frame37 self-stretch p-6 bg-blue-950 rounded-[64px] justify-center items-center inline-flex"
+            >
+              <div
+                class="text-white text-xl font-normal font-['Open Sans Hebrew'] leading-normal"
+              >
+                В корзину
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- FAQ -->
+      <div
+        id="faq"
+        class="FAQ self-stretch grow shrink basis-0 justify-start items-start gap-2 inline-flex"
+      >
+        <div
+          class="Content grow shrink basis-0 h-[712px] px-9 py-[52px] bg-white rounded-[32px] flex-col justify-end items-start gap-6 inline-flex"
+        >
+          <div
+            class="self-stretch text-blue-950 text-7xl font-normal font-['Open Sans Hebrew'] uppercase leading-[72px]"
+          >
+            Остались вопросы?
+          </div>
+        </div>
+        <div
+          class="Qs h-auto grow shrink basis-0 flex-col justify-start items-start gap-2 inline-flex"
+        >
+          <div
+            class="1block self-stretch h-auto px-9 pt-16 pb-8 bg-white rounded-[32px] flex-col justify-end items-start gap-8 flex"
+          >
+            <div
+              class="Q self-stretch justify-start items-start gap-8 inline-flex"
+            >
+              <div
+                class="grow shrink basis-0 text-blue-950 text-[28px] font-normal font-['Open Sans Hebrew'] leading-loose"
+              >
+                Как вы генерируете ковры?
+              </div>
+              <button
+                class="Group2 w-14 h-14 relative"
+                onclick="toggleAnswer(this)"
+              >
+                <div
+                  class="Rectangle20 w-14 h-14 left-0 top-0 absolute bg-gray-200 rounded-[72px]"
+                ></div>
+                <div
+                  class="Rectangle21 w-1 h-6 left-[26px] top-[16px] absolute bg-white rounded-2xl"
+                ></div>
+                <div
+                  class="Rectangle22 w-1 h-6 left-[40px] top-[26px] absolute origin-top-left rotate-90 bg-white rounded-2xl"
+                ></div>
+              </button>
+            </div>
+            <div
+              class="Answer hidden self-stretch text-slate-900 text-xl font-normal font-['Open Sans Hebrew'] leading-normal"
+            >
+              Мы проанализировали более миллиона туркменских, турецких,
+              индийских ковров. И конечно же, кропотливо изучили ковры со стен
+              бабушек со всего постсоветского пространства.
+            </div>
+          </div>
+          <div
+            class="2block self-stretch h-auto px-9 pt-16 pb-8 bg-white rounded-[32px] flex-col justify-end items-start gap-8 flex"
+          >
+            <div
+              class="Q self-stretch justify-start items-start gap-8 inline-flex"
+            >
+              <div
+                class="grow shrink basis-0 text-blue-950 text-[28px] font-normal font-['Open Sans Hebrew'] leading-loose"
+              >
+                У меня не получается сгенерировать ковёр, который я хочу
+              </div>
+              <button
+                class="Group2 w-14 h-14 relative"
+                onclick="toggleAnswer(this)"
+              >
+                <div
+                  class="Rectangle20 w-14 h-14 left-0 top-0 absolute bg-gray-200 rounded-[72px]"
+                ></div>
+                <div
+                  class="Rectangle21 w-1 h-6 left-[26px] top-[16px] absolute bg-white rounded-2xl"
+                ></div>
+                <div
+                  class="Rectangle22 w-1 h-6 left-[40px] top-[26px] absolute origin-top-left rotate-90 bg-white rounded-2xl"
+                ></div>
+              </button>
+            </div>
+            <div
+              class="Answer hidden self-stretch text-slate-900 text-xl font-normal font-['Open Sans Hebrew'] leading-normal"
+            >
+              Вы всегда можете купить уже готовый ковёр, сгенерированный
+              специально нашими дизайнерами. Его рисунок и цвета тоже будут
+              индивидуальны, а вы будете его единственным обладателем.
+              <br />Если вы хотите пошить какой-то особенный ковёр – напишите
+              нам, мы придумаем, как это сделать.
+            </div>
+          </div>
+          <div
+            class="3block self-stretch h-auto px-9 pt-16 pb-8 bg-white rounded-[32px] flex-col justify-end items-start gap-8 flex"
+          >
+            <div
+              class="Q self-stretch justify-start items-start gap-8 inline-flex"
+            >
+              <div
+                class="grow shrink basis-0 text-blue-950 text-[28px] font-normal font-['Open Sans Hebrew'] leading-loose"
+              >
+                Как оплатить ковёр?
+              </div>
+              <button
+                class="Group2 w-14 h-14 relative"
+                onclick="toggleAnswer(this)"
+              >
+                <div
+                  class="Rectangle20 w-14 h-14 left-0 top-0 absolute bg-gray-200 rounded-[72px]"
+                ></div>
+                <div
+                  class="Rectangle21 w-1 h-6 left-[26px] top-[16px] absolute bg-white rounded-2xl"
+                ></div>
+                <div
+                  class="Rectangle22 w-1 h-6 left-[40px] top-[26px] absolute origin-top-left rotate-90 bg-white rounded-2xl"
+                ></div>
+              </button>
+            </div>
+            <div
+              class="Answer hidden self-stretch text-slate-900 text-xl font-normal font-['Open Sans Hebrew'] leading-normal"
+            >
+              Оплатить ковёр можно и российской, и зарубежной картой. При оплате
+              зарубежной — сумма спишется в долларах США по курсу платежной
+              системы на момент оплаты.
+              <br />Если у вас возникнут трудности с оплатой напишите нам.
+            </div>
+          </div>
+          <div
+            class="4block self-stretch h-auto px-9 pt-16 pb-8 bg-white rounded-[32px] flex-col justify-end items-start gap-8 flex"
+          >
+            <div
+              class="Q self-stretch justify-start items-start gap-8 inline-flex"
+            >
+              <div
+                class="grow shrink basis-0 text-blue-950 text-[28px] font-normal font-['Open Sans Hebrew'] leading-loose"
+              >
+                Я могу заказать ковёр в другую страну?
+              </div>
+              <button
+                class="Group2 w-14 h-14 relative"
+                onclick="toggleAnswer(this)"
+              >
+                <div
+                  class="Rectangle20 w-14 h-14 left-0 top-0 absolute bg-gray-200 rounded-[72px]"
+                ></div>
+                <div
+                  class="Rectangle21 w-1 h-6 left-[26px] top-[16px] absolute bg-white rounded-2xl"
+                ></div>
+                <div
+                  class="Rectangle22 w-1 h-6 left-[40px] top-[26px] absolute origin-top-left rotate-90 bg-white rounded-2xl"
+                ></div>
+              </button>
+            </div>
+            <div
+              class="Answer hidden self-stretch text-slate-900 text-xl font-normal font-['Open Sans Hebrew'] leading-normal"
+            >
+              Конечно! Мы постараемся доставить ваш ковёр туда, куда вам нужно
+              будет. Даже в горы. И на остров. Мы правда доставим его куда
+              угодно.<br />
+              После отправки мы пришлём вам трек номер, чтобы вы могли следить
+              за своим ковром-самолётом.
+            </div>
+          </div>
+          <div
+            class="5block self-stretch h-auto px-9 pt-16 pb-8 bg-white rounded-[32px] flex-col justify-end items-start gap-8 flex"
+          >
+            <div
+              class="Q self-stretch justify-start items-start gap-8 inline-flex"
+            >
+              <div
+                class="grow shrink basis-0 text-blue-950 text-[28px] font-normal font-['Open Sans Hebrew'] leading-loose"
+              >
+                Я не нашел ответ на вопрос. Как мне связаться с вами?
+              </div>
+              <button
+                class="Group2 w-14 h-14 relative"
+                onclick="toggleAnswer(this)"
+              >
+                <div
+                  class="Rectangle20 w-14 h-14 left-0 top-0 absolute bg-gray-200 rounded-[72px]"
+                ></div>
+                <div
+                  class="Rectangle21 w-1 h-6 left-[26px] top-[16px] absolute bg-white rounded-2xl"
+                ></div>
+                <div
+                  class="Rectangle22 w-1 h-6 left-[40px] top-[26px] absolute origin-top-left rotate-90 bg-white rounded-2xl"
+                ></div>
+              </button>
+            </div>
+            <div
+              class="Answer hidden self-stretch text-slate-900 text-xl font-normal font-['Open Sans Hebrew'] leading-normal"
+            >
+              <a href="#" class="underline">Напишите нам в Telegram.</a> Наша команда ответит вам по будням с
+              10:00 до 19:00.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Footer -->
+      <div
+        class="Footer self-stretch h-auto bg-pink-700 rounded-[32px] flex-col justify-start items-start gap-2 flex"
+      >
+        <div
+          class="Row self-stretch justify-start items-start gap-2 inline-flex"
+        >
+          <div
+            class="Col grow shrink basis-0 p-9 bg-pink-700 rounded-[32px] flex-col justify-start items-start gap-[52px] inline-flex"
+          >
+            <div
+              class="self-stretch text-white text-[28px] font-normal font-['Open Sans Hebrew'] leading-loose"
+            >
+              Мы обязательно поможем вам сделать ковёр вашей мечты, чтобы вы
+              захотели сделать такой не только себе, но и вашей бабушке на
+              стенку.
+            </div>
+            <div
+              class="BtnGen w-[368px] p-6 bg-lime-300 rounded-[64px] justify-center items-center gap-2.5 inline-flex"
+            >
+              <a
+                href="#generator"
+                class="no-underline text-xl font-normal font-['Open Sans Hebrew'] leading-normal"
+              >
+                Сгенерировать
+              </a>
+            </div>
+          </div>
+          <div
+            class="Gap grow shrink basis-0 self-stretch p-8 bg-pink-700 rounded-[32px]"
+          ></div>
+        </div>
+        <div
+          class="Row self-stretch px-9 py-[52px] justify-start items-start gap-2 inline-flex"
+        >
+          <div
+            class="Col w-[462px] bg-pink-700 rounded-[32px] flex-col justify-start items-start gap-8 inline-flex"
+          >
+            <div
+              class="text-white text-xl font-normal font-['Open Sans Hebrew'] leading-normal"
+            >
+              Меню
+            </div>
+            <div class="Frame45 flex-col justify-start items-start gap-3 flex">
+              <a
+                href="#block"
+                class="no-underline hover:underline transition-all duration-300 text-white text-xl font-normal font-['Open Sans Hebrew'] leading-normal"
+              >
+                Сколько можно сделать ковров?
+              </a>
+              <a
+                href="#block2"
+                class="no-underline hover:underline transition-all duration-300 text-white text-xl font-normal font-['Open Sans Hebrew'] leading-normal"
+              >
+                Как это вообще всё работает?
+              </a>
+              <a
+                href="#generator"
+                class="no-underline hover:underline transition-all duration-300 text-white text-xl font-normal font-['Open Sans Hebrew'] leading-normal"
+              >
+                Генератор
+              </a>
+              <a
+                href="#shop"
+                class="no-underline hover:underline transition-all duration-300 text-white text-xl font-normal font-['Open Sans Hebrew'] leading-normal"
+              >
+                Готовые ковры
+              </a>
+              <a
+                href="#faq"
+                class="no-underline hover:underline transition-all duration-300 text-white text-xl font-normal font-['Open Sans Hebrew'] leading-normal"
+              >
+                Вопросы и ответы
+              </a>
+            </div>
+          </div>
+          <div
+            class="Col w-[462px] bg-pink-700 rounded-[32px] flex-col justify-start items-start gap-8 inline-flex"
+          >
+            <div
+              class="text-white text-xl font-normal font-['Open Sans Hebrew'] leading-normal"
+            >
+              Контакты
+            </div>
+            <div class="Frame45 flex-col justify-start items-start gap-3 flex">
+              <div
+                class="SquarefancyrugHelloRu text-white text-xl font-normal font-['Open Sans Hebrew'] leading-normal"
+              >
+                squarefancyrug@hello.ru
+              </div>
+              <div
+                class="Squarefancyrug text-white text-xl font-normal font-['Open Sans Hebrew'] leading-normal"
+              >
+                Телеграм – @squarefancyrug
+              </div>
+            </div>
+          </div>
+          <div
+            class="Col w-[462px] bg-pink-700 rounded-[32px] flex-col justify-start items-start gap-8 inline-flex"
+          >
+            <div
+              class="2024 text-white text-xl font-normal font-['Open Sans Hebrew'] leading-normal"
+            >
+              © 2024 У нас нет ИП
+            </div>
+            <div
+              class="text-white text-xl font-normal font-['Open Sans Hebrew'] leading-normal"
+            >
+              Политика обработки персональных данных
+            </div>
+            <div
+              class="text-white text-xl font-normal font-['Open Sans Hebrew'] leading-normal"
+            >
+              Сделали Серёжа, Лера и Глеб
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <main class="container">
-        <div style="
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                    justify-content: center; /* Add this line to center horizontally */
-                    height: 90vh; /* Add this line to center vertically */
-                ">
-            <div style="margin-right: -100px; padding: 20px">
-                <h1 style="font-size: 4em">
-                    <strong>Ваш новый <br />
-                        прямоугольный<br />
-                        модный ковёр
-                    </strong>
-                </h1>
-            </div>
-            <div style="margin-left: -100px; padding: 20px">
-                <img src="img/1section_img.png" />
-            </div>
-        </div>
-        <section>
-            <h3>
-                Мы сделаем ковёр точно такой же, как вы сгенерировали на
-                сайте
-            </h3>
-            <img class="container" src="img/placeholder_1.png" />
-            <h3>И доставим к вам домой или в пункт выдачи через 14 дней</h3>
-        </section>
-        <section id="generator">
-            <div>
-                <div class="row">
-                    <h2>Title</h2>
-                    <h4>Subtitle</h4>
-                </div>
-                <img src="/path/to/image" alt="Image" hx-get="/path/to/endpoint" hx-trigger="load">
-                <div class="row">
-                    <input type="text" placeholder="Введите любое слово" id="userInput">
-                    <p id="response"></p>
-                    <button hx-post="/path/to/endpoint" hx-target="#response" hx-swap="outerHTML">
-                        <img src="/path/to/button-image" alt="Button">
-                    </button>
-                </div>
-        </section>
+    <script>
+      // JavaScript
+      function toggleAnswer(btn) {
+        const answer = btn.parentElement.nextElementSibling;
+        const isHidden = answer.classList.contains("hidden");
 
-        <div id="threejs-container"></div>
-        <div id="time-display"></div>
+        if (isHidden) {
+          // Show the answer element
+          gsap.to(answer, {
+            duration: 1,
+            height: "auto",
+            autoAlpha: 1,
+            ease: "power1.inOut",
+            onComplete: () => {
+              answer.classList.remove("hidden");
+            },
+          });
+        } else {
+          // Hide the answer element
+          gsap.to(answer, {
+            duration: 1,
+            height: 0,
+            autoAlpha: 0,
+            ease: "power1.inOut",
+            onComplete: () => {
+              answer.classList.add("hidden");
+            },
+          });
+        }
+      }
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        console.log("print");
 
-        <script type="module" src="/time.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollToPlugin.min.js"></script>
-        <script type="module" src="/animation.js"></script>
-    </main>
-</body>
+        document.querySelectorAll('a[href^="#"]').forEach((link) => {
+          link.addEventListener("click", (e) => {
+            e.preventDefault();
 
+            const target = document.querySelector(e.target.hash);
+            const offset = target.offsetTop;
+
+            gsap.to(window, {
+              duration: 1,
+              scrollTo: {
+                y: offset,
+                autoKill: false,
+              },
+              ease: "expo.inOut",
+            });
+          });
+        });
+      });
+    </script>
+  </body>
 </html>
