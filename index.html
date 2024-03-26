@@ -166,20 +166,23 @@
           </div>
         </div>
       </div>
+      <!-- Generator -->
       <div
+        id="generator"
         class="Frame49 self-stretch h-auto flex-col justify-start items-start gap-2 flex"
       >
         <div
-          id="generator"
           class="Generator self-stretch rounded-[32px] justify-start items-start gap-2 inline-flex"
         >
           <div
+            id="pattern-preview"
             class="Frame28 grow shrink basis-0 self-stretch p-8 bg-white rounded-[32px] flex-col justify-center items-center gap-6 inline-flex"
           ></div>
           <div
             class="Frame36 w-[462px] h-auto flex-col justify-start items-start gap-2 inline-flex"
           >
             <div
+              id="shape-options"
               class="Frame31 self-stretch bg-cyan-600 rounded-[32px] flex-col justify-start items-start gap-8 flex"
             >
               <div
@@ -194,27 +197,30 @@
               <div
                 class="Frame37 self-stretch bg-blue-950 rounded-[64px] justify-start items-start inline-flex"
               >
-                <button
-                  class="Frame29 grow shrink basis-0 h-auto p-6 bg-teal-950 rounded-[64px] justify-center items-center gap-2.5 flex"
+                <div
+                  class="Frame29 grow shrink basis-0 h-auto p-6 bg-teal-950 rounded-[64px] justify-center items-center gap-2.5 flex cursor-pointer"
+                  data-value="rectangle"
                 >
                   <div
                     class="text-white text-xl font-normal font-['Open Sans Hebrew'] leading-normal"
                   >
                     Прямоугольный
                   </div>
-                </button>
-                <button
-                  class="Frame31 grow shrink basis-0 h-auto p-6 bg-slate-700 rounded-[64px] justify-center items-center gap-2.5 flex"
+                </div>
+                <div
+                  class="Frame31 grow shrink basis-0 h-auto p-6 bg-slate-700 rounded-[64px] justify-center items-center gap-2.5 flex cursor-pointer"
+                  data-value="square"
                 >
                   <div
                     class="text-white text-xl font-normal font-['Open Sans Hebrew'] leading-normal"
                   >
                     Квадратный
                   </div>
-                </button>
+                </div>
               </div>
             </div>
             <div
+              id="color-options"
               class="Frame32 self-stretch bg-cyan-600 rounded-[32px] flex-col justify-start items-start gap-8 flex"
             >
               <div
@@ -229,27 +235,30 @@
               <div
                 class="Frame37 self-stretch bg-blue-950 rounded-[64px] justify-start items-start inline-flex"
               >
-                <button
-                  class="Frame31 grow shrink basis-0 h-auto p-6 bg-slate-700 rounded-[64px] justify-center items-center gap-2.5 flex"
+                <div
+                  class="Frame31 grow shrink basis-0 h-auto p-6 bg-slate-700 rounded-[64px] justify-center items-center gap-2.5 flex cursor-pointer"
+                  data-value="color"
                 >
                   <div
                     class="text-white text-xl font-normal font-['Open Sans Hebrew'] leading-normal"
                   >
                     Цветной
                   </div>
-                </button>
-                <button
-                  class="Frame29 grow shrink basis-0 h-auto p-6 bg-teal-950 rounded-[64px] justify-center items-center gap-2.5 flex"
+                </div>
+                <div
+                  class="Frame29 grow shrink basis-0 h-auto p-6 bg-teal-950 rounded-[64px] justify-center items-center gap-2.5 flex cursor-pointer"
+                  data-value="monochrome"
                 >
                   <div
                     class="text-white text-xl font-normal font-['Open Sans Hebrew'] leading-normal"
                   >
                     Монохром
                   </div>
-                </button>
+                </div>
               </div>
             </div>
             <div
+              id="pattern-options"
               class="Frame33 self-stretch bg-cyan-600 rounded-[32px] flex-col justify-start items-start gap-8 flex"
             >
               <div
@@ -264,32 +273,40 @@
               <div
                 class="Frame37 self-stretch bg-blue-950 rounded-[64px] justify-start items-start inline-flex"
               >
-                <button
-                  class="Frame31 grow shrink basis-0 h-[72px] p-6 bg-slate-700 rounded-[64px] justify-center items-center gap-2.5 flex"
+                <div
+                  class="Frame31 grow shrink basis-0 h-[72px] p-6 bg-slate-700 rounded-[64px] justify-center items-center gap-2.5 flex cursor-pointer"
+                  data-value="lines"
                 >
                   <div
                     class="text-white text-xl font-normal font-['Open Sans Hebrew'] leading-normal"
                   >
                     Линии
                   </div>
-                </button>
-                <button
-                  class="Frame29 grow shrink basis-0 h-[72px] p-6 bg-teal-950 rounded-[64px] justify-center items-center gap-2.5 flex"
+                </div>
+                <div
+                  class="Frame29 grow shrink basis-0 h-[72px] p-6 bg-teal-950 rounded-[64px] justify-center items-center gap-2.5 flex cursor-pointer"
+                  data-value="chaos"
                 >
                   <div
                     class="text-white text-xl font-normal font-['Open Sans Hebrew'] leading-normal"
                   >
                     Хаос
                   </div>
-                </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
+
         <div
           class="Frame35 h-auto self-stretch rounded-[32px] justify-start items-start gap-2 inline-flex"
         >
           <button
+            hx-post="/generate"
+            hx-target="#pattern-preview"
+            hx-headers='{"Content-Type": "application/json"}'
+            hx-swap="outerHTML"
+            hx-vals='{"shape": "#shape-options .active", "color": "#color-options .active", "pattern": "#pattern-options .active"}'
             class="Frame28 w-auto h-auto grow shrink basis-0 p-9 bg-lime-300 rounded-[64px] flex-col justify-start items-center gap-2.5 inline-flex"
           >
             <div
@@ -309,6 +326,7 @@
           </button>
         </div>
       </div>
+      <!-- Shop -->
       <div
         id="shop"
         class="self-stretch h-[712px] bg-cyan-600 rounded-[32px] justify-start items-start gap-2 inline-flex"
@@ -633,8 +651,8 @@
             <div
               class="Answer hidden self-stretch text-slate-900 text-xl font-normal font-['Open Sans Hebrew'] leading-normal"
             >
-              <a href="#" class="underline">Напишите нам в Telegram.</a> Наша команда ответит вам по будням с
-              10:00 до 19:00.
+              <a href="#" class="underline">Напишите нам в Telegram.</a> Наша
+              команда ответит вам по будням с 10:00 до 19:00.
             </div>
           </div>
         </div>
@@ -811,6 +829,86 @@
           });
         });
       });
+    </script>
+    <script>
+      const generator = document.getElementById("generator");
+      const shapeElements = generator.querySelectorAll(
+        '[data-value="rectangle"], [data-value="square"]'
+      );
+      const colorElements = generator.querySelectorAll(
+        '[data-value="color"], [data-value="monochrome"]'
+      );
+      const patternElements = generator.querySelectorAll(
+        '[data-value="lines"], [data-value="chaos"]'
+      );
+
+      let selectedShape = "rectangle";
+      let selectedColor = "color";
+      let selectedPattern = "lines";
+
+      const updateSelection = () => {
+        shapeElements.forEach((element) => {
+          element.classList.toggle(
+            "bg-teal-950",
+            element.dataset.value === selectedShape
+          );
+          element.classList.toggle(
+            "bg-slate-700",
+            element.dataset.value !== selectedShape
+          );
+        });
+
+        colorElements.forEach((element) => {
+          element.classList.toggle(
+            "bg-teal-950",
+            element.dataset.value === selectedColor
+          );
+          element.classList.toggle(
+            "bg-slate-700",
+            element.dataset.value !== selectedColor
+          );
+        });
+
+        patternElements.forEach((element) => {
+          element.classList.toggle(
+            "bg-teal-950",
+            element.dataset.value === selectedPattern
+          );
+          element.classList.toggle(
+            "bg-slate-700",
+            element.dataset.value !== selectedPattern
+          );
+        });
+      };
+
+      shapeElements.forEach((element) => {
+        element.addEventListener("click", () => {
+          selectedShape = element.dataset.value;
+          shapeElements.forEach((el) => el.classList.remove("active"));
+          element.classList.add("active");
+          updateSelection();
+        });
+      });
+
+      colorElements.forEach((element) => {
+        element.addEventListener("click", () => {
+          selectedColor = element.dataset.value;
+          colorElements.forEach((el) => el.classList.remove("active"));
+          element.classList.add("active");
+          updateSelection();
+        });
+      });
+
+      patternElements.forEach((element) => {
+        element.addEventListener("click", () => {
+          selectedPattern = element.dataset.value;
+          patternElements.forEach((el) => el.classList.remove("active"));
+          element.classList.add("active");
+          updateSelection();
+        });
+      });
+
+      updateSelection();
     </script>
   </body>
 </html>
